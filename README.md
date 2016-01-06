@@ -1,2 +1,4 @@
 # projet-c
-Dossier pour projet C 
+Dossier pour projets C
+
+Lucas BOSSARD
