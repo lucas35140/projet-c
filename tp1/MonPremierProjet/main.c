@@ -173,7 +173,7 @@ int main(int argc, char *argv[])
 				scanf("%d", &x);
 			}
 
-			resultat = x^y;
+			resultat = pow(x,y);
 		}
 
 		printf("le resultat est %d\n", resultat);
