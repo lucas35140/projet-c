@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 		do
 		{
 			printf("Donner une valeur entre 0 et 100\n");
-			scanf_s("%d", &first);
+			scanf_s_s("%d", &first);
 
 		} while (first < min || first > max);
 		system("cls");
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
 		printf("reco ? \n 1 = oui\n 2 = non\n");
 
-		scanf("%d", &choix);
+		scanf_s("%d", &choix);
 
 	} while (choix == 1);
 

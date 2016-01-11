@@ -11,7 +11,7 @@ int main(int argc, char * argv[]){
 	do{
 		printf("Combien d'etoiles pour la base ? (saisir un nombre impair)\n");
 		fflush(stdin);
-		scanf("%d", &base);
+		scanf_s("%d", &base);
 	} while (base % 2 == 0); //test nombre impaire
 
 

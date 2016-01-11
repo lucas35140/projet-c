@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
 	int y = 0;
 	int min = 0;
 	printf("Donnez une valeur en 1 et 10:\n");
-	scanf("%d", &valeur);
+	scanf_s("%d", &valeur);
 
 	while (x < valeur)
 	{

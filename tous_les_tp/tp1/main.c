@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 	do
 	{
 		printf("Donner une valeur entre 0 et 100\n");
-		scanf_s("%d", &first);
+		scanf_s_s("%d", &first);
 
 	} while (first < 0 || first > 100);
 	system("cls");
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	do
 	{
 		printf("Donne une valeur entre 0 et 100\n");
-		scanf_s("%d", &trouve);
+		scanf_s_s("%d", &trouve);
 		if (first > trouve){
 			printf("C'est plus !\n");
 

@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 		printf("Saisir le type de calcul:\n");
 		int menu;
-		scanf_s("%d", &menu);
+		scanf_s_s("%d", &menu);
 
 		if (menu == 1)
 		{
@@ -32,20 +32,20 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 1)
 			{
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 2)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 			}
 
 
@@ -58,20 +58,20 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 1)
 			{
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 2)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 			}
 
 			resultat = x - y;
@@ -83,20 +83,20 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 1)
 			{
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 2)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 			}
 
 			resultat = x * y;
@@ -108,20 +108,20 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 1)
 			{
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 2)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 			}
 
 			resultat = x / y;
@@ -133,20 +133,20 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 1)
 			{
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 2)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 			}
 
 			resultat = x % y;
@@ -158,20 +158,20 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 1)
 			{
 				printf("Saisir y : ");
-				scanf_s("%d", &y);
+				scanf_s_s("%d", &y);
 			}
 			else if (choix2 == 2)
 			{
 				printf("Saisir x : ");
-				scanf_s("%d", &x);
+				scanf_s_s("%d", &x);
 			}
 
 			resultat = pow(x, y);
@@ -181,14 +181,14 @@ int main(int argc, char *argv[])
 
 		printf("Recommencer ?\n");
 		printf("Oui = 1, Non = 0\n");
-		scanf_s("%d", &choix);
+		scanf_s_s("%d", &choix);
 
 
 		if (choix == 1)
 		{
 
 			printf("reutiliser le resultat ?\n Non = 0\n Oui pour x = 1\n Oui pour y = 2\n");
-			scanf_s("%d", &choix2);
+			scanf_s_s("%d", &choix2);
 
 			if (choix2 == 1)
 			{

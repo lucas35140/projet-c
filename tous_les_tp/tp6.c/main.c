@@ -6,6 +6,8 @@ double pi();
 double fahren_cels(double fahrenheit);
 double cels_fahren(double celsuis);
 double perimetre_cercle(double diametre);
+double aire_triangle(double hauteur, double base);
+double volume_cylindre(double rayon, double hauteur);
 
 int main(int argc, char * argv[]){
 
@@ -18,8 +20,11 @@ int main(int argc, char * argv[]){
 	printf("3 -> Celsius en Fahrenheit\n");
 	printf("4 -> Puissance\n");
 	printf("5 -> Perimetre Cercle\n");
+	printf("6 -> Aire triangle\n");
+	printf("7 -> Volume Cylindre\n");
 
-	scanf("%d", &menu);
+
+	scanf_s("%d", &menu);
 
 	switch (menu)
 	{
@@ -35,7 +40,7 @@ int main(int argc, char * argv[]){
 		printf("Fahrenheit en Celsius\n");
 		double fahrenheit;
 		printf("Donne ta temperature en F:\n");
-		scanf("%lf", &fahrenheit);
+		scanf_s("%lf", &fahrenheit);
 		double celsuis = fahren_cels(fahrenheit);
 		printf("Le rez en C est %.2lf", celsuis);
 		break;
@@ -45,7 +50,7 @@ int main(int argc, char * argv[]){
 		printf("Celsius en Fahrenheit\n");
 		double celsius;
 		printf("Donne ta temperature en C:\n");
-		scanf("%lf", &celsius);
+		scanf_s("%lf", &celsius);
 		double fahrenheit_rez = cels_fahren(celsius);
 		printf("Le rez en F est %.2lf\n", fahrenheit_rez);
 
@@ -54,21 +59,49 @@ int main(int argc, char * argv[]){
 	case 4:
 		printf("Puissance\n");
 		printf("Donnez val 1:\n");
-		int val1; scanf("%d", &val1);
+		double val1; scanf_s("%lf", &val1);
 		printf("Donnez val 2:\n");
-		int val2; scanf("%d", &val2);
+		double val2; scanf_s("%lf", &val2);
 
-		int rez = pow(val1, val2);
+		double rez = pow(val1, val2);
 
-		printf("Le rez est %d\n", rez);
+		printf("Le rez est %.2lf\n", rez);
 		break;
 	case 5:
 		printf("Perimetre Cercle\n");
 		printf("Donner le Diametre du cercle\n");
-		double diametre; scanf("%lf", &diametre);
+		double diametre; scanf_s("%lf", &diametre);
 		double perimetre = perimetre_cercle(diametre);
 		printf("Le perimetre est %.2lf", perimetre);
 		break;
+
+	case 6:
+
+		printf("Aire triangle\n");
+		printf("Donner hauteur du triangle:\n");
+		double hauteur;
+		scanf_s("%lf", &hauteur);
+		printf("Donner la base du triangle:\n");
+		double base;
+		scanf_s("%lf", &base);
+		double aire = aire_triangle(hauteur, base);
+		printf("l'aire est %.2lf\n", aire);
+		break;
+
+	case 7:
+
+		printf("Volume Cylindre\n");
+
+		printf("Taper le rayon:\n");
+		double rayon; 
+		scanf_s("%lf", &rayon);
+		printf("Taper la hauteur:\n");
+		double haut; 
+		scanf_s("%lf", &haut);
+		double volume = volume_cylindre(rayon, haut);
+		printf("Le volume est %.2lf\n", volume);
+		break;
+
 	default:
 		break;
 	}
@@ -103,3 +136,14 @@ double perimetre_cercle(double diametre){
 	return perimetre;
 }
 
+double aire_triangle(double hauteur, double base) {
+
+	double aire = hauteur * base / 2.0;
+
+	return aire;
+}
+double volume_cylindre(double rayon, double hauteur) {
+
+	double volume =  (rayon * rayon) * hauteur * pi();
+	return volume;
+}
