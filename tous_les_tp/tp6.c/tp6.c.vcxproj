@@ -10,13 +10,11 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.c" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{821D147F-A8BB-4E83-8CBE-279614E3E918}</ProjectGuid>
+    <ProjectGuid>{DE840C9F-FEAE-4E24-93EA-48A0EF3DF5A8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>tp4</RootNamespace>
+    <RootNamespace>tp6c</RootNamespace>
+    <ProjectName>tp6</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,6 +76,9 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

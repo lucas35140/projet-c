@@ -15,13 +15,11 @@ int main(int argc, char *argv[]){
 		y = 0;
 		x++;
 
-		/*test*/
 		while (y < x)
 		{
 			printf("*");
 			y++;
 		}
-		/*fintest*/
 		printf("\n");
 	}
 
@@ -30,16 +28,13 @@ int main(int argc, char *argv[]){
 		y = 0;
 		x--;
 
-		/*test*/
 		while (y < x)
 		{
 			printf("*");
 			y++;
 		}
-		/*fintest*/
 		printf("\n");
 	}
 
-	printf("X est egale a %d", x);
 	system("pause");
 }
