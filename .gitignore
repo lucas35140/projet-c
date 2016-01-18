@@ -1,1 +1,7 @@
-projet-c\tous_les_tp\Debug\*
+.exe
+.pdt
+.tlog
+.obj
+.log
+.idb
+.ilk
