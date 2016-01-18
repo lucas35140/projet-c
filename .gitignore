@@ -1,7 +1,7 @@
-.exe
-.pdt
-.tlog
-.obj
-.log
-.idb
-.ilk
+*.exe
+*.pdt
+*.tlog
+*.obj
+*.log
+*.idb
+*.ilk
