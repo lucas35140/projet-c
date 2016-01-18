@@ -1,1 +1,5 @@
-﻿
+﻿  main.c
+d:\projet-c\tous_les_tp\tp2\main.c(26): warning C4013: 'scanf_s_s' non défini(e) ; extern retournant int pris par défaut
+d:\projet-c\tous_les_tp\tp2\main.c(177): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+main.obj : error LNK2019: symbole externe non résolu _scanf_s_s référencé dans la fonction _main
+D:\projet-c\tous_les_tp\Debug\tp2.exe : fatal error LNK1120: 1 externes non résolus

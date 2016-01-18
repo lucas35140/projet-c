@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 			if (choix2 == 0)
 			{
 				printf("Saisir x : ");
-				scanf_s_s("%d", &x);
+				scanf_ss("%d", &x);
 
 				printf("Saisir y : ");
 				scanf_s_s("%d", &y);
