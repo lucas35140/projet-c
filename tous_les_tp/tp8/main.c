@@ -7,6 +7,14 @@ void CopierChaine(char chaine[100], char chaine2[100]);
 void MenuCopierChaine(char chaine[100], char chaine2[100]);
 void MenuComparerChaine(char chaine[100], char chaine2[100]);
 int ComparerChaine(char chaine[100], char chaine2[100]);
+void MenuRechercheChaine(char chaine[100], char chaine2[100]);
+int RechercheChaine(char chaine[100], char chaine2[100]);
+void MenuRechercheCarac(char chaine[100], char chaine2[100]);
+int RechercheCarac(char chaine[100], char chaine2[100]);
+void MenuMinuscule(char chaine[100]);
+void Minuscule(char chaine[100]);
+void MenuMajuscule(char chaine[100]);
+void Majuscule(char chaine[100]);
 
 int main(int argc, char *argv[])
 {
@@ -54,12 +62,20 @@ int main(int argc, char *argv[])
 			system("pause");
 			break;
 		case 5:
+			MenuRechercheCarac(chaine, chaine2);
+			system("pause");
 			break;
 		case 6:
+			MenuRechercheChaine(chaine, chaine2);
+			system("pause");
 			break;
 		case 7:
+			MenuMinuscule(chaine);
+			system("pause");
 			break;
 		case 8:
+			MenuMajuscule(chaine);
+			system("pause");
 			break;
 		default:
 			break;
@@ -156,13 +172,121 @@ void MenuComparerChaine(char chaine[100], char chaine2[100]) {
 
 }
 
-int RechercheChaine(char chaine[100], char chaine2[100]) {
 
+int RechercheCarac(char chaine[100], char chaine2[100]) {
 	int i = 0, j = 0;
 	int position = -1;
+
 	while (chaine[i] != '\0')
 	{
-		
-
+		if (chaine[i] == chaine2[j]) {
+			position = i;
+			return position;
+		}
 	}
+	return position;
+}
+
+void MenuRechercheCarac(char chaine[100], char chaine2[100]) {
+	printf("\n Recherche de Caractere\n\n");
+	printf("Saisir le caractere : \n");
+	scanf("%s", chaine2);
+	int position = RechercheChaine(chaine, chaine2);
+	if (position == -1) {
+		printf("Le caractere ne se trouve pas dans la chaine\n");
+	}
+	else
+	{
+		printf("Le caractere se trouve en : %d\n", position + 1);
+	}
+}
+
+
+int RechercheChaine(char chaine[100], char chaine2[100]) {
+	int i = 0, j = 0;
+	int position = -1;
+	int temp_i;
+	while (chaine[i] != '\0')
+	{
+		if (chaine[i] == chaine2[j]) {
+			temp_i = i;
+			while (chaine[i] == chaine2[j])
+			{
+				if (chaine2[j] >= '\0')
+				{
+					position = temp_i;
+					return position;
+				}
+
+				i++;
+				j++;
+			}
+		}
+		else if (chaine[i] != chaine2[j]) {
+			temp_i = i;
+			j = 0;
+		}
+		i = temp_i;
+		i++;
+	}
+	return position;
+}
+
+void MenuRechercheChaine(char chaine[100], char chaine2[100]) {
+	printf("\n Recherche de chaine\n\n");
+	printf("Saisir la deuxieme chaine : \n");
+	scanf("%s", chaine2);
+	int position = RechercheChaine(chaine, chaine2);
+	if (position == -1) {
+		printf("La chaine ne se trouve pas dans la chaine\n");
+	}
+	else
+	{
+		printf("La chaine se trouve en : %d\n", position + 1);
+	}
+}
+
+void Minuscule(char chaine[100]) {
+
+	int i = 0;
+
+	while (chaine[i] != '\0')
+	{
+		if (chaine[i] >= 65 && chaine[i] <= 90) {
+			chaine[i] = chaine[i] + 32;
+		}
+		i++;
+	}
+
+
+}
+void MenuMinuscule(char chaine[100]) {
+
+	printf("\n Mettre la chaine de caracteres en minuscule\n\n");
+	Minuscule(chaine);
+	printf("La chaine devient ============ %s\n", chaine);
+
+}
+
+
+void Majuscule(char chaine[100]) {
+
+	int i = 0;
+
+	while (chaine[i] != '\0')
+	{
+		if (chaine[i] >= 97 && chaine[i] <= 122) {
+			chaine[i] = chaine[i] - 32;
+		}
+		i++;
+	}
+
+
+}
+void MenuMajuscule(char chaine[100]) {
+
+	printf("\n Mettre la chaine de caracteres en majuscule\n\n");
+	Majuscule(chaine);
+	printf("La chaine devient ============ %s\n", chaine);
+
 }

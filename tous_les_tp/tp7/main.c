@@ -22,22 +22,26 @@ int PlusPetitElementTableau(int tableau[], int tailleTableau);
 
 void MenuPositionPlusPetitElementTableau(int tableau[], int tailleTableau);
 int PositionPlusPetitElementTableau(int tableau[], int tailleTableau);
-/*
+
+
+
 void MenuTableauEstOrdonne(int tableau[], int tailleTableau);
 int TableauEstOrdonne(int tableau[], int tailleTableau, int asc);
 
-*/
+
 void MenuOrdonneTableau(int tableau[], int tailleTableau);
-int OrdonneTableau(int tableau[], int tailleTableau, int asc);
-/*
+void OrdonneTableau(int tableau[], int tailleTableau, int asc);
+
 void MenuRechercheDichotomique(int tableau[], int tailleTableau);
 int RechercheDichotomique(int tableau[], int tailleTableau, int val);
-
+/*
 void MenuInverserTableau(int tableau[], int tailleTableau);
 void InverserTableau(int tableau[], int tailleTableau);
 
 void MenuSommeTableauMultiDim();
-int SommeTableauMultiDim();*/
+int SommeTableauMultiDim();
+
+*/
 
 int main(int argc, char *argv[])
 {
@@ -93,18 +97,21 @@ int main(int argc, char *argv[])
 			MenuPositionPlusPetitElementTableau(tableau, tailleTableau);
 			system("pause");
 			break;
-			/*
+
 		case 6:
 			MenuTableauEstOrdonne(tableau, tailleTableau);
 			system("pause");
 			break;
-			
+
 		case 7:
 			MenuOrdonneTableau(tableau, tailleTableau);
 			break;
+			
 		case 8:
 			MenuRechercheDichotomique(tableau, tailleTableau);
+			system("pause");
 			break;
+			/*
 		case 9:
 			MenuInverserTableau(tableau, tailleTableau);
 			break;
@@ -241,9 +248,141 @@ int PositionPlusPetitElementTableau(int tableau[], int tailleTableau) {
 	return rez;
 }
 
-void MenuOrdonneTableau(int tableau[], int tailleTableau) {
+void MenuTableauEstOrdonne(int tableau[], int tailleTableau) {
+	int asc;
+	printf("\n Tester si un tableau est ordonne\n\n");
+
+	printf("Donner un type : \n 0 = croissant \n 1 = Decroissant\n");
+
+	fflush(stdin);
+
+	scanf("%d", &asc);
+
+	int test = TableauEstOrdonne(tableau, tailleTableau, asc);
+
+	if (test == 0) {
+		printf("Le tableau est ordonner\n");
+	}
+	else if (test == 1) {
+		printf("Le tableau n'est pas ordonner\n");
+	}
 
 }
-int OrdonneTableau(int tableau[], int tailleTableau, int asc) {
+
+int TableauEstOrdonne(int tableau[], int tailleTableau, int asc) {
+	int i = 0;
+	int test = 0;
+	while (i < tailleTableau)
+	{
+		while (asc == 0)
+		{
+			if (tableau[i] > tableau[i + 1]) {
+				test = 1;
+				return test;
+			}
+			i++;
+		}
+		while (asc == 1)
+		{
+			if (tableau[i] < tableau[i + 1]) {
+				test = 1;
+				return test;
+			}
+			i++;
+		}
+	}
+	return test;
+}
+
+void MenuOrdonneTableau(int tableau[], int tailleTableau) {
+	int saisie = 0;
+
+	printf("Voulez-vous ordonne de maniere croisante ? 0 -> non ; 1 -> oui mais n'ecrivez pas blablabla \n");
+	fflush(stdin);
+	scanf("%d", &saisie);
+
+	OrdonneTableau(tableau, tailleTableau, saisie);
+
+	printf("Votre tableau est ordonne\n");
+}
+void OrdonneTableau(int tableau[], int tailleTableau, int asc) {
+	int i = 0;
+	int j = 0;
+	int temp;
+	int positionValeur = -1;
+	int valeur = tableau[0];
+
+	while (i < tailleTableau) {
+		valeur = tableau[i];
+		j = i + 1;
+		positionValeur = -1;
+		while (j < tailleTableau) {
+			if ((asc && tableau[j] < valeur) || (!asc && tableau[j] > valeur)) {
+				positionValeur = j;
+				valeur = tableau[j];
+			}
+			j++;
+		}
+		if (positionValeur >= 0) {
+			temp = tableau[i];
+			tableau[i] = tableau[positionValeur];
+			tableau[positionValeur] = temp;
+		}
+		i++;
+	}
+
+}
+void MenuRechercheDichotomique(int tableau[], int tailleTableau) {
+	printf("\nRecherche de valeur \n\n");
+
+	int val;
+	printf("Taper valeur a trouver : \n");
+	scanf("%d", &val);
+
+	int rez = RechercheDichotomique(tableau, tailleTableau, val);
+
+	if (rez == -1) {
+		printf("La valeur n'est pas dans le tableau\n");
+	}
+	else
+	{
+		printf("La valeur est dans la case : %d\n", rez + 1);
+	}
+
+}
+int RechercheDichotomique(int tableau[], int tailleTableau, int val) {
+
+	int test = 0;
+	int rez = -1;
+	int min = 0;
+	int max = tailleTableau;
+	int trouve;
+
+	trouve = max / 2;
+	while ((min <= max) && (test == 0))
+	{
+		trouve = (min + max) / 2;
+
+		if (tableau[trouve] == val) {
+
+			rez = trouve;
+			test = 1;
+
+		}
+		else {
+			if (tableau[trouve] < val) {
+
+				min = trouve;
+				trouve = (min + max) / 2;
+			}
+			else if (tableau[trouve] > val) {
+				max = trouve;
+				trouve = max / 2;
+
+			}
+		}
+	}
+
+	return rez;
 
 }

@@ -1,2 +1,4 @@
-﻿main.obj : error LNK2019: symbole externe non résolu _scanf_s_s référencé dans la fonction _main
-D:\projet-c\tous_les_tp\Debug\tp3.exe : fatal error LNK1120: 1 externes non résolus
+﻿  main.c
+f:\projet-c\tous_les_tp\tp3\main.c(21): warning C4013: 'scanf_s_s' non défini(e) ; extern retournant int pris par défaut
+main.obj : error LNK2019: symbole externe non résolu _scanf_s_s référencé dans la fonction _main
+F:\projet-c\tous_les_tp\Debug\tp3.exe : fatal error LNK1120: 1 externes non résolus
