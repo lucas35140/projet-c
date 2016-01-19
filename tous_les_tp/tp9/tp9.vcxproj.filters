@@ -18,18 +18,18 @@
     <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="traitement.c">
+    <ClCompile Include="pendu.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="affichage.c">
+    <ClCompile Include="affichage_pendu.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="affichage.h">
+    <ClInclude Include="pendu.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="traitement.h">
+    <ClInclude Include="affichage_pendu.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

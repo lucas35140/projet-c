@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FC06AC97-C9DB-425A-98AC-9E190F21CED9}</ProjectGuid>
+    <ProjectGuid>{06D6EC9C-93C9-48D7-88D6-0EF68DAA46AE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>tp7</RootNamespace>
+    <RootNamespace>tp9</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,13 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="affichage.c" />
+    <ClCompile Include="affichage_pendu.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="traitement.c" />
+    <ClCompile Include="pendu.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="affichage.h" />
-    <ClInclude Include="traitement.h" />
+    <ClInclude Include="affichage_pendu.h" />
+    <ClInclude Include="pendu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
