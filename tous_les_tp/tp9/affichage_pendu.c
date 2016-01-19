@@ -3,76 +3,70 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void principal() {
 
-void MenuPrincipal() {
-	int choix = 0;
-
-	char Premier[20];
-	char Deuxieme[20];
-
-	printf("                VIENT TE PENDRE !\n\n");
-	printf("     ================ MENU ===================\n\n");
-	printf("             1 -- Jouer au PENDU !\n");
-	printf("             2 -- Meilleur score\n");
-	fflush(stdin);
-	scanf("%d", &choix);
-
-	do
-	{
-		switch (choix)
-		{
-		case 1:
-			printf("Le PENDU !\n\n");
-			
-
-			MenuPremierMot(Premier);
-
-			Longueuchaine2(Premier, Deuxieme);
-
-			SaisieCarac(Premier, Deuxieme);
-
-			AffichChaine2(Premier, Deuxieme);
-
-			
-
-			break;
-		default:
-			break;
-		}
-	} while (choix != 0);
-}
-
-void MenuPremierMot(char mot[]) {
-	printf("Joueur 1 !\n\n");
-
-	printf("Taper le mot\n");
-	fflush(stdin);
-	scanf("%s", mot);
-
-	system("cls");
-}
-void AffichChaine2(char chaine[], char chaine2[]) {
-	int j = 0;
-	system("cls");
-
-	printf("Joueur 2 ! \n");
-	printf("Mot a trouver\n");
-
-	while (chaine2[j] != '\0')
-	{
-		printf("%c  ", chaine2[j]);
-		j++;
-	}
-	printf("\n\n");
-}
-
-void SaisieCarac(char chaine[], char chaine2[]) {
-
+	char principal[20];
+	char secondaire[20];
+	int test = 0;
+	int vie = 7;
+	int testvie;
 	char saisie;
-	int i = 0;
-	printf("Saisir la lettre\n");
-	fflush(stdin);
-	saisie = getch();
 
-	TestCaract(chaine, chaine2, saisie);
+	printf("============== Le Pendu ================\n");
+
+	printf(" Joueur 1 Saisir chaine \n");
+
+	fflush(stdin);
+	scanf("%s", principal);
+
+	system("cls");
+
+	Transformation(principal, secondaire);
+
+
+	while (test == 0)
+	{
+		printf("============== Le Pendu ================\n");
+
+		AffichTransformation(secondaire);
+
+		printf("Joueur 2 Saisir une lettre:\n");
+
+		printf("Il vous reste %d <3 \n", vie);
+
+		saisie = getch();
+
+		test = TestChaine(principal, secondaire);
+
+		testvie = TestCaractere(principal, secondaire, saisie);
+
+		if (testvie != 1) {
+			vie--;
+		}
+
+		if (vie == 0) {
+			test = 1; 
+		}
+		system("cls");
+	}  /*OU VIE = 0 */
+	
+	if (vie == 0) {
+		printf("Tu n'a plus de vie\n");
+
+	}
+	else
+	{
+		printf("Tu a GAGNER !\n");
+	}
+}
+
+
+void AffichTransformation(char secondaire[]) {	
+	int i = 0;
+	while (secondaire[i] != '\0')
+	{
+		printf("%c ", secondaire[i]);
+		i++;
+	}
+	printf("\n");
 }

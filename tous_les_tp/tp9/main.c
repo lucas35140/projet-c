@@ -8,8 +8,9 @@
 int main(int argc, char *argv[])
 {
 
-	MenuPrincipal();
-
+	principal();
+	
+	system("pause");
 	return 0;
 }
 

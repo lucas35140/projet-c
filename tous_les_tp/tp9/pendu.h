@@ -1,6 +1,7 @@
 #ifndef PENDU
 #define PENDU 1
 
-void Longueuchaine2(char chaine[], char chaine2[]);
-void TestCaract(char chaine[], char chaine2[], char saisie);
+void Transformation(char principal[], char secondaire[]);
+int TestCaractere(char principal[], char secondaire[], char caractere);
+int TestChaine(char principal[], char secondaire[]);
 #endif // !PENDU
