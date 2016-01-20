@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 
 	principal();
 	
-	system("pause");
 	return 0;
 }
 

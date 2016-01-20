@@ -2,7 +2,7 @@
 #include "affichage_pendu.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <Windows.h>
 void principal() {
 
 	char principal[20];
@@ -36,32 +36,33 @@ void principal() {
 
 		saisie = getch();
 
-		test = TestChaine(principal, secondaire);
 
 		testvie = TestCaractere(principal, secondaire, saisie);
 
+		test = TestChaine(principal, secondaire);
 		if (testvie != 1) {
 			vie--;
 		}
 
 		if (vie == 0) {
-			test = 1; 
+			test = 1;
 		}
 		system("cls");
 	}  /*OU VIE = 0 */
-	
+
 	if (vie == 0) {
 		printf("Tu n'a plus de vie\n");
 
 	}
 	else
 	{
-		printf("Tu a GAGNER !\n");
+		printf("Tu as GAGNE !\n");
 	}
+	system("pause");
 }
 
 
-void AffichTransformation(char secondaire[]) {	
+void AffichTransformation(char secondaire[]) {
 	int i = 0;
 	while (secondaire[i] != '\0')
 	{

@@ -12,16 +12,21 @@ void Transformation(char principal[], char secondaire[]) {
 	secondaire[i] = '\0';
 }
 
-int TestCaractere(char principal[], char secondaire[], char caractere){
+int TestCaractere(char principal[], char secondaire[], char caractere) {
 
 	int i = 0;
 	int test = 0;
-	while(principal[i] != '\0'){
+	while (principal[i] != '\0') {
 
 		if (principal[i] == caractere) {
 
-			secondaire[i] = principal[i];
-			test = 1;
+			if (secondaire[i] == caractere) {
+				test = 0;
+			}
+			else {
+				secondaire[i] = principal[i];
+				test = 1;
+			}
 		}
 
 		i++;
