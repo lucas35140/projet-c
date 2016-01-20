@@ -2,12 +2,10 @@
 
 void Transformation(char principal[], char secondaire[]) {
 	int i = 0;
-	int j = 0;
 	while (principal[i] != '\0')
 	{
 		secondaire[i] = '_';
 		i++;
-		j++;
 	}
 	secondaire[i] = '\0';
 }

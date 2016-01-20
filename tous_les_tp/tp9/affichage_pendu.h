@@ -3,5 +3,6 @@
 
 void principal();
 void AffichTransformation(char secondaire[]);
+void AfficherPendu();
 
 #endif // !AFFICHAGE_PENDU

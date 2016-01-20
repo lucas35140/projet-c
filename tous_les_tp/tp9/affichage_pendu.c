@@ -12,9 +12,12 @@ void principal() {
 	int testvie;
 	char saisie;
 
-	printf("============== Le Pendu ================\n");
 
-	printf(" Joueur 1 Saisir chaine \n");
+	AfficherPendu();
+
+	printf("\n\n================ Le Pendu ==================\n\n");
+
+	printf("          Joueur 1 Saisir le mot \n");
 
 	fflush(stdin);
 	scanf("%s", principal);
@@ -26,13 +29,26 @@ void principal() {
 
 	while (test == 0)
 	{
-		printf("============== Le Pendu ================\n");
+		int lavie = 0;
 
-		AffichTransformation(secondaire);
+		AfficherPendu();
 
-		printf("Joueur 2 Saisir une lettre:\n");
+		printf("\n\n================ Le Pendu ==================\n\n");
 
-		printf("Il vous reste %d <3 \n", vie);
+		printf("         Mot a trouver   "); AffichTransformation(secondaire);
+
+		printf("\n    Il vous reste: ");
+		while (lavie < vie) {
+
+			printf("<3 ");
+			lavie++;
+		}
+		printf("\n");
+
+
+
+		printf("\n         Joueur 2 Saisir une lettre:\n");
+
 
 		saisie = getch();
 
@@ -51,12 +67,45 @@ void principal() {
 	}  /*OU VIE = 0 */
 
 	if (vie == 0) {
-		printf("Tu n'a plus de vie\n");
+		AfficherPendu();
+
+
+		printf("\n\n\n\n");
+		printf(" =============================================\n\n");
+
+		printf("     _____  ______ _____  _____  _    _ _ \n");
+		printf("    |  __ \\|  ____|  __ \\|  __ \\| |  | | |\n");
+		printf("    | |__) | |__  | |__) | |  | | |  | | |\n");
+		printf("    |  ___/|  __| |  _  /| |  | | |  | | |\n");
+		printf("    | |    | |____| | \\ \\| |__| | |__| |_|\n");
+		printf("    |_|    |______|_|  \\_\\_____/ \\____/(_)\n");
+
+		printf("\n\n =============================================\n\n");
+
+
+
+		printf("            Tu n'as plus de vie\n\n\n\n");
 
 	}
 	else
 	{
-		printf("Tu as GAGNE !\n");
+		AfficherPendu();
+
+		printf("\n\n\n\n");
+		printf(" =============================================\n\n");
+
+		printf("                _____  _____ \n");
+		printf("               / ____|/ ____|\n");
+		printf("              | |  __| |  __ \n");
+		printf("              | | |_ | | |_ |\n");
+		printf("              | |__| | |__| |\n");
+		printf("               \\_____|\\_____|\n");
+
+
+
+		printf("\n\n =============================================\n\n");
+
+		printf("               Tu as GAGNE !\n\n\n");
 	}
 	system("pause");
 }
@@ -70,4 +119,13 @@ void AffichTransformation(char secondaire[]) {
 		i++;
 	}
 	printf("\n");
+}
+
+void AfficherPendu() {
+	printf("  _____    ______   _   _   _____    _    _ \n");
+	printf(" |  __ \\  |  ____| | \\ | | |  __ \\  | |  | |\n");
+	printf(" | |__) | | |__    |  \\| | | |  | | | |  | |\n");
+	printf(" |  ___/  |  __|   | . ` | | |  | | | |  | |\n");
+	printf(" | |      | |____  | |\\  | | |__| | | |__| |\n");
+	printf(" |_|      |______| |_| \\_| |_____/   \\____/ \n");
 }
