@@ -40,7 +40,7 @@ void principal() {
 		printf("\n    Il vous reste: ");
 		while (lavie < vie) {
 
-			printf("<3 ");
+			printf("\x3 ");
 			lavie++;
 		}
 		printf("\n");
@@ -84,7 +84,8 @@ void principal() {
 
 
 
-		printf("            Tu n'as plus de vie\n\n\n\n");
+		printf("            Tu n'as plus de vie\n\n");
+		printf("          Le mot a trouver etait : %s\n\n\n", principal);
 
 	}
 	else
